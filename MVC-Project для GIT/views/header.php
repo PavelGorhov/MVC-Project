@@ -9,7 +9,7 @@
     <?php
         if(isset($css))
             foreach($css as $item)
-                echo "<link rel='stylesheet' href='/assets/css/{$item}'>";
+                echo "<link rel='stylesheet' href='/assets/css/bootstrap.css'>";
         if(isset($javascript))
             foreach($javascript as $item)
                 echo "<script src='/assets/js/{$item['src']}' " . ($item['defer'] ? 'defer' : '' ) . "></script>"

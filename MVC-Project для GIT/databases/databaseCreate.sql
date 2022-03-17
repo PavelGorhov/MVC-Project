@@ -1,12 +1,12 @@
-CREATE TABLE `users`(
+CREATE TABLE IF NOT EXISTS `users` (
                         `id` INT AUTO_INCREMENT PRIMARY KEY,
                         `name` VARCHAR(128),
                         `login` VARCHAR(128) UNIQUE,
-                        `passsword` VARCHAR(128),
+                        `password` VARCHAR(128),
                         `role` VARCHAR(24) DEFAULT 'user'
 );
 
-CREATE TABLE `posts` (
+CREATE TABLE IF NOT EXISTS `posts` (
                          `id` INT AUTO_INCREMENT PRIMARY KEY,
                          `user_id` INT,
                          `name` VARCHAR(128),
@@ -16,7 +16,7 @@ CREATE TABLE `posts` (
                          FOREIGN KEY (`user_id`) REFERENCES `users`(`id`)
 );
 
-CREATE TABLE `comments` (
+CREATE TABLE IF NOT EXISTS `comments` (
                             `id` INT AUTO_INCREMENT PRIMARY KEY,
                             `post_id` INT,
                             `user_id` INT,
